@@ -22,6 +22,6 @@
 </div>
 <div class="row">
 	<div class="col-md-2 col-md-offset-5">
-		{!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
+		{!! Form::submit('Salvar', ['class' => 'btn btn-primary btn-sm']) !!}
 	</div>
 </div>

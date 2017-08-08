@@ -14,14 +14,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-
         //raw query
         //$products = DB::select('SELECT * FROM products');
 
         //active record
-        $products = Product::all();
+        $products = Product::where('name', 'LIKE', "%{$request->name}%")
+                                ->orderBy('name', 'asc')
+                                ->get();
         //$products = Product::where('stock_amount', '>', 0)->get();
 
         return view('products.index', ['products' => $products]);
@@ -47,7 +48,7 @@ class ProductController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:products|max:255',
-            'stock_amount' => 'required',
+            'stock_amount' => 'required|numeric',
         ]);
 
         $product = new Product;
@@ -57,7 +58,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect('products');
+        return redirect('product/index');
     }
 
     /**
