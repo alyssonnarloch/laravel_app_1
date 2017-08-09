@@ -12,6 +12,10 @@
 
 		<!-- Styles -->
 		<link href="{{ asset('css/app.css') }}"" rel="stylesheet">
+
+		<!-- Javascript -->
+		<script src="{{ asset('js/app.js') }}"></script>
+		<script src="{{ asset('js/bootstrap/app.js') }}"></script>
 	</head>
 
 

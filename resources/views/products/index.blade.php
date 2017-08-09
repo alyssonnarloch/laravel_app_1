@@ -39,4 +39,6 @@
 			</tbody>
 		</table>
 	</div>
+	<script type="text/javascript">
 @endsection
+
