@@ -28,6 +28,7 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,
-        'stock_amount' => $faker->randomDigit
+        'stock_amount' => $faker->randomDigit,
+        'price' => $faker->randomFloat(2, 0, 500)
     ];
 });
