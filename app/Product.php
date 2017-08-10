@@ -14,6 +14,6 @@ class Product extends Model
     }
 
     public function getPriceAttribute($value) {
-    	return number_format($value, 2, ',', '.');
+    	return 'R$ ' . number_format($value, 2, ',', '.');
     }
 }

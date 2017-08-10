@@ -20,9 +20,15 @@ class ProductController extends Controller
         //$products = DB::select('SELECT * FROM products');
 
         //active record
+        //$products = Product::where('name', 'LIKE', "%{$request->name}%")
+        //                        ->orderBy('name', 'asc')
+        //                        ->get();
+
+
         $products = Product::where('name', 'LIKE', "%{$request->name}%")
-                                ->orderBy('name', 'asc')
-                                ->get();
+                                ->orderBy('id', 'asc')
+                                ->paginate(5);
+        
         //$products = Product::where('stock_amount', '>', 0)->get();
 
         return view('products.index', ['products' => $products]);
@@ -46,8 +52,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $request->price = str_replace(',', '.', str_replace('.', '', $request->price));
-//print_r($request->price );die;
         $this->validate($request, [
             'name' => 'required|unique:products|max:255',
             'stock_amount' => 'required|numeric',
