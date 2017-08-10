@@ -23,7 +23,7 @@
 <div class="form-group">
 	{!! Form::label('price', 'Preço', ['class' => 'col-sm-2 control-label']) !!}
 	<div class="col-sm-2">
-		{!! Form::text('price', '', ['class' => 'form-controll', 'size' => 50]) !!}
+		{!! Form::text('price', '', ['class' => 'form-controll', 'size' => 22, 'maxlength' => 7]) !!}
 	</div>
 </div>
 <div class="row">

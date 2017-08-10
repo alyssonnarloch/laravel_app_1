@@ -14,7 +14,7 @@ class AddPriceToProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->decimal('price', 5, 2);
+            $table->decimal('price', 7, 2);
         });
     }
 

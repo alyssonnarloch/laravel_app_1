@@ -115,7 +115,8 @@ return [
 
     'attributes' => [
         'name' => 'Nome',
-        'stock_amount' => 'Estoque'
+        'stock_amount' => 'Estoque',
+        'price' => 'Preço'
     ],
 
 ];

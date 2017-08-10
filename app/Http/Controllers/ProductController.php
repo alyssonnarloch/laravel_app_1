@@ -46,15 +46,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->price = str_replace(',', '.', str_replace('.', '', $request->price));
+//print_r($request->price );die;
         $this->validate($request, [
             'name' => 'required|unique:products|max:255',
             'stock_amount' => 'required|numeric',
+            'price' => 'required',
         ]);
 
         $product = new Product;
 
         $product->name = $request->name;
         $product->stock_amount = $request->stock_amount;
+        $product->price = $request->price;
 
         $product->save();
 

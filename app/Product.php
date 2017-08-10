@@ -12,4 +12,8 @@ class Product extends Model
     public function getCreatedAtAttribute($value) {
     	return Carbon::parse($value)->format('d/m/Y h:i:s');
     }
+
+    public function getPriceAttribute($value) {
+    	return number_format($value, 2, ',', '.');
+    }
 }

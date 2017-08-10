@@ -21,6 +21,7 @@
 				<tr>
 					<th>Código</th>
 					<th>Nome</th>
+					<th>Preço</th>
 					<th>Estoque</th>
 					<th>Criado</th>
 					<th>Opções</th>
@@ -31,6 +32,7 @@
 				<tr>
 					<td>{{ $product->id }}</td>
 					<td>{{ $product->name }}</td>
+					<td>{{ $product->price }}</td>
 					<td>{{ $product->stock_amount }}</td>
 					<td>{{ $product->created_at }}</td>
 					<td></td>
