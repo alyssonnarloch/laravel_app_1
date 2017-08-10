@@ -39,6 +39,10 @@
 			</tbody>
 		</table>
 	</div>
-	<script type="text/javascript">
-@endsection
 
+	<script type="text/javascript">
+		$(function() {
+			//alert("irrra");
+		});
+	</script>
+@endsection

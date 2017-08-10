@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+require('jquery-mask-plugin')
+
 window.Vue = require('vue');
 
 /**

@@ -11,15 +11,17 @@
 		<title>{{ config('app.name', 'Laravel') }}</title>
 
 		<!-- Styles -->
-		<link href="{{ asset('css/app.css') }}"" rel="stylesheet">
+		<link href="{{ asset('css/app.css') }}"" rel="stylesheet">	
+	</head>
+
+	<body>
+		<!-- VUE -->
+		<div id="app"></div>
 
 		<!-- Javascript -->
 		<script src="{{ asset('js/app.js') }}"></script>
 		<script src="{{ asset('js/bootstrap/app.js') }}"></script>
-	</head>
 
-
-	<body>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-collapse collaple">
@@ -42,4 +44,6 @@
 			@yield('content')
 		</div>	
 	</body>
+
+
 </html>
