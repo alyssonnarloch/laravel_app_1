@@ -13,7 +13,11 @@ class Product extends Model
     	return Carbon::parse($value)->format('d/m/Y h:i:s');
     }
 
+    public function getUpdatedAtAttribute($value) {
+    	return Carbon::parse($value)->format('d/m/Y h:i:s');
+    }
+
     public function getPriceAttribute($value) {
-    	return 'R$ ' . number_format($value, 2, ',', '.');
+    	return number_format($value, 2, ',', '.');
     }
 }

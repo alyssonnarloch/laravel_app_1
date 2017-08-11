@@ -26,6 +26,7 @@
 					<th>Preço</th>
 					<th>Estoque</th>
 					<th>Criado</th>
+					<th>Atualizado</th>
 					<th>Opções</th>
 				</tr>
 			</thead>
@@ -34,10 +35,14 @@
 				<tr>
 					<td>{{ $product->id }}</td>
 					<td>{{ $product->name }}</td>
-					<td>{{ $product->price }}</td>
+					<td>R$ {{ $product->price }}</td>
 					<td>{{ $product->stock_amount }}</td>
 					<td>{{ $product->created_at }}</td>
-					<td></td>
+					<td>{{ $product->updated_at }}</td>
+					<td>
+						{!! link_to_action('ProductController@edit', $title = 'Editar', $parameters = ['id' => $product->id], $attributes = ['id' => $product->id, 'class' => 'btn btn-warning btn-sm']) !!}						
+						{!! link_to_action('ProductController@destroy', $title = 'Deletar', $parameters = ['id' => $product->id], $attributes = ['id' => $product->id, 'class' => 'btn btn-danger btn-sm', 'onclick' => 'return confirm("Tem certeza que deseja excluir este registro?");']) !!}
+					</td>
 				</tr>
 				@endforeach
 			</tbody>

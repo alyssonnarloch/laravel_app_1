@@ -11,19 +11,19 @@
 <div class="form-group">
 	{!! Form::label('name', 'Nome', ['class' => 'col-sm-2 control-label']) !!}
 	<div class="col-sm-2">
-		{!! Form::text('name', '', ['class' => 'form-controll', 'size' => 50]) !!}
+		{!! Form::text('name', $product->name, ['class' => 'form-controll', 'size' => 50]) !!}
 	</div>
 </div>
 <div class="form-group">
 	{!! Form::label('stock_amount', 'Estoque', ['class' => 'col-sm-2 control-label']) !!}
 	<div class="col-sm-2">
-		{!! Form::number('stock_amount', '', ['class' => 'form-controll']) !!}
+		{!! Form::number('stock_amount', $product->stock_amount, ['class' => 'form-controll']) !!}
 	</div>
 </div>
 <div class="form-group">
 	{!! Form::label('price', 'Preço', ['class' => 'col-sm-2 control-label']) !!}
 	<div class="col-sm-2">
-		{!! Form::text('price', '', ['class' => 'form-controll', 'size' => 22, 'maxlength' => 7]) !!}
+		{!! Form::text('price', $product->price, ['class' => 'form-controll', 'size' => 22, 'maxlength' => 7]) !!}
 	</div>
 </div>
 <div class="row">
