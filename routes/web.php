@@ -22,3 +22,6 @@ Route::post('product', 'ProductController@store')->middleware('format.us.price')
 Route::get('product/edit/{id}', 'ProductController@edit');
 Route::put('product/{id}', 'ProductController@update')->middleware('format.us.price');
 Route::get('product/{id}', 'ProductController@destroy');
+
+Route::resource('orders', 'OrdersController');
+Route::get('order/show/{id}', 'OrderController@show');
