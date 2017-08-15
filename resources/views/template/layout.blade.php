@@ -29,6 +29,9 @@
 						<li>
 							<a class="active" href="/product/index">Produtos</a>
 						</li>
+						<li>
+							<a href="/order/index">Pedidos</a>
+						</li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">

@@ -24,4 +24,8 @@ Route::put('product/{id}', 'ProductController@update')->middleware('format.us.pr
 Route::get('product/{id}', 'ProductController@destroy');
 
 Route::resource('orders', 'OrdersController');
+Route::get('order/index', 'OrderController@index');
+Route::get('order/create', 'OrderController@create');
+Route::post('order/store', 'OrderController@store');
 Route::get('order/show/{id}', 'OrderController@show');
+Route::get('order/product/{id}', 'OrderController@getProduct');
