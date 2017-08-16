@@ -28,6 +28,7 @@ class OrderController extends Controller
         $products = Product::orderBy('name')->get();
 
         $productsList = array();
+        $productsList[0] = 'SELECIONE';
         foreach($products as $product) {
             $productsList[$product->id] = $product->id . ' - ' . $product->name . ' (R$ ' . $product->price . ')';
         }
@@ -42,8 +43,20 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {        
+        $orderProducts = array();
+        foreach($request->products_id as $productId) {
+            $orderProducts[] = ['product_id' => $productId, 'amount' => 10];
+        }
+
+        $order = new Order;
+        $order->final_price = 1598.12;
+        $order->status = 1;
+        $order->save();
+
+        $order->products()->attach($orderProducts);
+
+        return redirect('order/show/' . $order->id);
     }
 
     /**
