@@ -12,20 +12,27 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::resource('products', 'ProductController');
-Route::get('product/index', 'ProductController@index');
-Route::get('product/create', 'ProductController@create');
-Route::post('product', 'ProductController@store')->middleware('format.us.price');
-Route::get('product/edit/{id}', 'ProductController@edit');
-Route::put('product/{id}', 'ProductController@update')->middleware('format.us.price');
-Route::get('product/{id}', 'ProductController@destroy');
 
-Route::resource('orders', 'OrdersController');
-Route::get('order/index', 'OrderController@index');
-Route::get('order/create', 'OrderController@create');
-Route::post('order/store', 'OrderController@store');
-Route::get('order/show/{id}', 'OrderController@show');
-Route::get('order/product/{id}', 'OrderController@getProduct');
+Route::middleware(['auth'])->group(function() {
+	Route::resource('products', 'ProductController');
+	Route::get('product/index', 'ProductController@index');
+	Route::get('product/create', 'ProductController@create');
+	Route::post('product', 'ProductController@store')->middleware('format.us.price');
+	Route::get('product/edit/{id}', 'ProductController@edit');
+	Route::put('product/{id}', 'ProductController@update')->middleware('format.us.price');
+	Route::get('product/{id}', 'ProductController@destroy');
+
+	Route::resource('orders', 'OrdersController');
+	Route::get('order/index', 'OrderController@index');
+	Route::get('order/create', 'OrderController@create');
+	Route::post('order/store', 'OrderController@store');
+	Route::get('order/show/{id}', 'OrderController@show');
+	Route::get('order/product/{id}', 'OrderController@getProduct');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

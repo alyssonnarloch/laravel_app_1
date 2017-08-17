@@ -1,11 +1,11 @@
-@extends('template.layout')
+@extends('layouts.app')
 
 @section('content')
 	<div class="panel panel-default">
 		<div class="panel-heading">Lista de produtos</div>
 		<div class="panel-body">
 			<div class="row">
-				<div class="col-md-5 col-md-offset-3">
+				<div class="col-md-7">
 					{!! Form::open(['url' => 'product/index', 'method' => 'GET', 'class' => 'form-inline']) !!}
 						<div class="form-group">
 							{!! Form::text('name', '', ['class' => 'form-controll', 'size' => 50, 'placeholder' => 'Nome do produto']) !!}
@@ -15,7 +15,7 @@
 						</div>						
 					{!! Form::close() !!}
 				</div>
-				<div class="col-md-1 col-md-offset-3">
+				<div class="col-md-1 col-md-offset-4">
 					{!! link_to('product/create', $title = 'Novo', $attributes = ['class' => 'btn btn-primary btn-sm']) !!}
 				</div>
 			</div>
