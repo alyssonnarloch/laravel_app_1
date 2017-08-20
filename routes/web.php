@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function() {
 	Route::put('product/{id}', 'ProductController@update')->middleware('format.us.price');
 	Route::get('product/{id}', 'ProductController@destroy');
 
-	Route::resource('orders', 'OrdersController');
+	Route::resource('orders', 'OrderController');
 	Route::get('order/index', 'OrderController@index');
 	Route::get('order/create', 'OrderController@create');
 	Route::post('order/store', 'OrderController@store');
@@ -36,3 +36,6 @@ Route::middleware(['auth'])->group(function() {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');

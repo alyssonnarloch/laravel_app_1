@@ -14,6 +14,12 @@ return [
     |
     */
 
+    'facebook' => [
+        'client_id' => '481778745534261',
+        'client_secret' => 'bc015107c7c29c9da602a69b64c4dd54',
+        'redirect' => 'http://localhost:8000/auth/facebook/callback',
+    ],
+
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
         'secret' => env('MAILGUN_SECRET'),

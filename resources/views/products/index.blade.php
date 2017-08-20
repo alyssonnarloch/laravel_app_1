@@ -7,6 +7,7 @@
 			<div class="row">
 				<div class="col-md-7">
 					{!! Form::open(['url' => 'product/index', 'method' => 'GET', 'class' => 'form-inline']) !!}
+						{{ csrf_field() }}
 						<div class="form-group">
 							{!! Form::text('name', '', ['class' => 'form-controll', 'size' => 50, 'placeholder' => 'Nome do produto']) !!}
 						</div>
